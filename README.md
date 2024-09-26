@@ -27,8 +27,11 @@ longer.
 
 If you find this behavior distracting (as I do), you can run the executable
 with newly added `-f` flag. The `Fixed-length` data fixes the length of each
-block. A negative value left aligns the output within the block (consistent
-with `printf`'s format specifier).
+block. A negative value left-aligns the output within the block (consistent
+with `printf`'s format specifier). Note that, in this mode, block content is
+padded with spaces; delimiter is therefore removed due to varying amount of
+paddings from block to block.
 
-A demo:
+*A demo (with fixed-length blocks):*
+
 ![dwmblocks](https://gregw.xyz/bkp/files/fixed.png)
