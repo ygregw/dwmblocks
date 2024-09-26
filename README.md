@@ -1,5 +1,5 @@
 # dwmblocks
-Modular status bar for dwm written in c.
+Modular status bar for dwm written in c (forked from [torrinfail/dwmblocks](https://github.com/torrinfail/dwmblocks))
 
 # usage
 To use dwmblocks first run `make` and then install it with `sudo make install`.
@@ -29,3 +29,6 @@ If you find this behavior distracting (as I do), you can run the executable
 with newly added `-f` flag. The `Fixed-length` data fixes the length of each
 block. A negative value left aligns the output within the block (consistent
 with `printf`'s format specifier).
+
+A demo:
+![dwmblocks](https://gregw.xyz/bkp/files/fixed.png)
