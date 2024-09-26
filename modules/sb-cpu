@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "$(sensors | awk '/Core 0/ {print "Temp: " $3}'| sed 's/+//g') ($(ps axch -o cmd:15,%cpu --sort=-%cpu | awk '{sum1 +=$2}; END {print  sum1"%"}'))"
