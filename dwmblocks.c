@@ -71,10 +71,7 @@ void getcmd(const Block *block, char *output, unsigned int pos)
 	if (i != 0) {
 		//only chop off newline if one is present at the end
 		i = tempstatus[i-1] == '\n' ? i-1 : i;
-		if (pos == jump) {
-			strncpy(tempstatus+i, jumpdelim, strlen(jumpdelim));
-		}
-		else if (delim[0] != '\0') {
+		if (delim[0] != '\0' && pos != jump) {
 			strncpy(tempstatus+i, delim, delimlen);
 		}
 		else
@@ -124,9 +121,6 @@ int getstatus(char *str, char *last)
 			unsigned int currentl = strlen(statusbar[i]);
 			unsigned int fixedl = ABS(current->fixedlen);
 			unsigned int dif = fixedl > currentl ? (fixedl-currentl) : (CMDLENGTH-currentl);
-			if (i == jump) {
-				statusbar[i][strlen(statusbar[i])-1] = '\0';
-			}
 			if (current->fixedlen < 0) {
 				strcat(str, "[");
 				strcat(str, statusbar[i]);
@@ -141,7 +135,7 @@ int getstatus(char *str, char *last)
 				strcat(str, "]");
 			}
 			if (i == jump) {
-				strcat(str, ";");
+				strcat(str, jumpdelim);
 			}
 		}
 	} else {
