@@ -2,12 +2,12 @@
 static const Block upperblocks[] = {
    /*Icon*/   /*Command*/     /*Update-interval*/   /*Update-signal*/   /*Fixed-length*/
 	{"",       "sb-battery",   300,                    1,						-14},
-   {"",       "sb-clock",     30,                    2,                  18},
+   {"",       "sb-clock",     30,                    2,                  17},
 };
 
 static const Block lowerblocks[] = {
-   {"",   "sb-cpu",        3,   3,   -24},
-   {"",   "sb-memory",     3,   4,   -22},
+   {"",   "sb-cpu",        3,   3,   -25},
+   {"",   "sb-memory",     3,   4,   -20},
    {"",   "sb-disk",       10,   5,   -20},
 };
 
