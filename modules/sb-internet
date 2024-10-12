@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
+	down) wifiicon=" OFFLINE " ;;
+	up) wifiicon="$(awk '/^\s*w/ { printf("%s:%3d%s", "WLAN", int($3 * 100 / 70), "%") }' /proc/net/wireless)" ;;
+esac
+
+printf "%s%s%s" "$wifiicon" "$(sed "s/down//;s/up/ Eternet /" /sys/class/net/e*/operstate 2>/dev/null)" "$(sed "s/.*/---VPN---/" /sys/class/net/tun*/operstate 2>/dev/null)"

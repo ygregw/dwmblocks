@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Displays number of upgradeable packages.
+# For this to work, run `checkupdates -d` in the background as a
+# cronjob every so often as root.
+#
+# The checkupdates script, provided by pacman-contrib,
+# safely checks updates to prevent partial upgrades
+
+printf "Pkg: %3s\n" "$(checkupdates | wc -l)"
