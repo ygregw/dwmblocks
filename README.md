@@ -32,6 +32,10 @@ with `printf`'s format specifier). Note that, in this mode, block content is
 padded with spaces; delimiter is therefore removed due to varying amount of
 paddings from block to block.
 
-*A demo (with fixed-length blocks):*
+*A demo with fixed-length blocks:*
 
 ![dwmblocks](https://gregw.xyz/bkp/files/fixed.png)
+
+*A demo with default "elastic" blocks:*
+
+![dwmblocks](https://gregw.xyz/bkp/files/default.png)
