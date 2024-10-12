@@ -141,6 +141,9 @@ int getstatus(char *str, char *last)
 	} else {
 		for (unsigned int i = 0; i < LENGTH(blocks); i++) {
 			strcat(str, statusbar[i]);
+			if (i == jump) {
+				strcat(str, jumpdelim);
+			}
 		}
 	}
 	str[strlen(str)-strlen(delim)] = '\0';
